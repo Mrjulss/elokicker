@@ -3,7 +3,6 @@ package com.kickscore.kickscore.player;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kickscore.kickscore.invitation.Invitation;
 import com.kickscore.kickscore.league_player.LeaguePlayer;
-import com.kickscore.kickscore.team.Team;
 import com.kickscore.kickscore.user.model.MyUser;
 import com.kickscore.kickscore.utils.BaseEntity;
 import jakarta.persistence.*;
