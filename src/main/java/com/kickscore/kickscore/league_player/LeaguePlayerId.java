@@ -7,14 +7,14 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class LeaguePlayerKey {
+public class LeaguePlayerId {
     private Long leagueId;
     private Long playerId;
 
-    public LeaguePlayerKey() {
+    public LeaguePlayerId() {
     }
 
-    public LeaguePlayerKey(Long leagueId, Long playerId) {
+    public LeaguePlayerId(Long leagueId, Long playerId) {
         this.leagueId = leagueId;
         this.playerId = playerId;
     }
@@ -24,7 +24,7 @@ public class LeaguePlayerKey {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LeaguePlayerKey that = (LeaguePlayerKey) o;
+        LeaguePlayerId that = (LeaguePlayerId) o;
 
         if (leagueId != null ? !leagueId.equals(that.leagueId) : that.leagueId != null) return false;
         return playerId != null ? playerId.equals(that.playerId) : that.playerId == null;

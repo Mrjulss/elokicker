@@ -1,8 +1,8 @@
 package com.kickscore.kickscore.league_player;
 
 import com.kickscore.kickscore.league.League;
+import com.kickscore.kickscore.match.Match;
 import com.kickscore.kickscore.player.Player;
-import com.kickscore.kickscore.team.Team;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 public class LeaguePlayer {
     @EmbeddedId
-    private LeaguePlayerKey id;
+    private LeaguePlayerId id;
 
     @ManyToOne
     @MapsId("leagueId")
@@ -22,8 +22,11 @@ public class LeaguePlayer {
     @JoinColumn(name = "player_id")
     private Player player;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    private Set<Team> teams;
+    @ManyToMany(mappedBy = "team1", fetch = FetchType.LAZY)
+    private Set<Match> matches_as_team1 ;
+
+    @ManyToMany(mappedBy = "team2", fetch = FetchType.LAZY)
+    private Set<Match> matches_as_team2;
 
     private int elo;
 }
